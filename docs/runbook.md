@@ -19,6 +19,12 @@ TELEGRAM_BOT_TOKEN=...
 TELEGRAM_CHAT_ID=...
 ```
 
+## Data Sources (必须使用)
+- Nansen: 资金流与持币分布
+- Dune: 自建查询 + 手动面板（见 `docs/dune_dashboard_steps.md`）
+- CoinMarketCap: 市值/报价/DEX 数据
+- CoinGecko: 价格/池子/链上接口
+
 ## Input Options
 1. Project folder with `contract.txt`, `website_url.txt`, `twitter_url.txt` plus any PDFs/images.
 2. Paste content directly into Codex app.
