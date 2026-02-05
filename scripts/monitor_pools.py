@@ -2,6 +2,8 @@ from pathlib import Path
 from datetime import datetime
 from typing import Mapping
 
+from scripts.telegram_notify import build_alert_message, send_message
+
 
 def write_alert(path: Path, alert: Mapping[str, object]) -> None:
     path = Path(path)
@@ -21,3 +23,8 @@ def write_alert(path: Path, alert: Mapping[str, object]) -> None:
 
     with path.open("a", encoding="utf-8") as handle:
         handle.write("\n".join(entry))
+
+
+def notify_alert(alert: Mapping[str, object]) -> bool:
+    text = build_alert_message(alert)
+    return send_message(text)

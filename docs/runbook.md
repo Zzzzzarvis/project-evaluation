@@ -15,6 +15,8 @@ NANSEN_API_KEY=...
 DUNE_API_KEY=...
 COINMARKETCAP_API_KEY=...
 COINGECKO_API_KEY=...
+TELEGRAM_BOT_TOKEN=...
+TELEGRAM_CHAT_ID=...
 ```
 
 ## Input Options
@@ -41,7 +43,14 @@ COINGECKO_API_KEY=...
 ```
 python scripts/monitor_pools.py
 ```
-- Alerts are appended to `monitor_alerts.md`.
+- Alerts are appended to `monitor_alerts.md` and sent to Telegram if env vars are set.
+
+## Evaluation Summary Notification (Optional)
+- After evaluation completes, run:
+```
+python scripts/notify_report.py
+```
+- This sends a brief summary plus internal decision highlights to Telegram.
 
 ## Security Notes
 - Never paste API keys into chat.
